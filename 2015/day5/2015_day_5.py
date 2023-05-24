@@ -24,11 +24,26 @@ def partOne():
         if vowels >= 3 and appears >= 1 and string:
             correctStrings += 1
     print(correctStrings)
-
+    
+def partTwo():
+    correctStrings = 0
+    array = f.readlines()
+    for object in array:
+        pair = 0
+        appears = 0
+        for i in range(len(object) - 1):
+            if(object.count((object[i] + object[i+1])) >= 2):
+                pair += 1
+            if(i < len(object) - 2):
+                if(object[i] == object[i+2] ):
+                    appears += 1
+        if(appears >= 1 and pair >= 1):
+            correctStrings += 1
+    print(correctStrings)
 
 
     
-partOne()
+partTwo()
 
 
 
